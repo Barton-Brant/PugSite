@@ -1,18 +1,178 @@
 <!DOCTYPE html>
+
 <html>
-<head>
-<title>Pug Life</title>
-  <style>
-body  {
-  background-image: url("https://cdn.pixabay.com/photo/2016/06/18/17/42/image-1465348_960_720.jpg");
-  background-color: #cccccc;
-}
-</style>
-</head>
-<body>
+    <head>
+        <title>Pugtopia</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+        <style>
+            @media only screen and (max-width: 600px) {
 
-</body>
+                .estrellas span {
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    width: 70px;
+                    height: 200px !important;
+                    margin-left: -35px;
+                    line-height: 530px; /* height*2 - font-size */
+                    text-align: center;
+                    transform-origin: top center;
+                }
+                #runningpug {
+                    position: relative;
+                    top: 125px;
+                    width: 300px;
+                }
+                .hidetostart {display:none;}
+            }
+
+
+.hidetostart {display:none;}
+            .estrellas {
+                position: relative;
+                height:300px;
+                margin: 0 auto;
+            }
+            .estrellas span {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                width: 70px;
+                height: 300px;
+                margin-left: -35px;
+                line-height: 530px; /* height*2 - font-size */
+                text-align: center;
+                transform-origin: top center;
+            }
+            .estrellas span:nth-of-type(7)  {
+                transform: rotate(40deg);
+            }
+            .estrellas span:nth-of-type(6)  {
+                transform: rotate(27.5deg);
+            }
+            .estrellas span:nth-of-type(5)  {
+                transform: rotate(13deg);
+            }
+            .estrellas span:nth-of-type(4)  {
+                transform: rotate(0deg);
+            }
+            .estrellas span:nth-of-type(3)  {
+                transform: rotate(-13deg);
+            }
+            .estrellas span:nth-of-type(2)  {
+                transform: rotate(-27.5deg);
+            }
+            .estrellas span:nth-of-type(1)  {
+                transform: rotate(-400deg);
+            }
+            /* Reverse mode */
+            .inverso {
+                font-weight: bold;
+            }
+            .inverso span {
+                line-height: 70px;
+                transform-origin: bottom center;
+            }
+
+            .enter {  background-image: url("https://d2r55xnwy6nx47.cloudfront.net/uploads/2018/08/TidalDisruptions_A_1440x810.gif");
+                      background-color: black;
+                      background-position: center center; 
+                      position:absolute; top:0px;  text-align:center;}
+            .entertext {position:absolute; color:white; top:30%; width:100%;}
+            .entertext button {margin-top:10px; background-color:black; color:white;}
+            .entertexttwo {position:absolute; color:white; top:30%; width:100%; display:none;}
+
+            .pug {color:red;}
+            body{background-color:white;}
+            
+        </style>
+
+    </head>
+    <body>
+        <!-- this is the funny intro idea-->
+        <div id="home" class="enter text-white text-center h-100 w-100 position-absolute align-middle" style="z-index:2;">
+            <h1 class="entertext px-5" id="hometext">In the beginning there was nothing worth living for...<br>
+                <button onclick="playAudio(); setTimeout(removePage, 3000); setTimeout(revealPage, 6000); setTimeout(revealTitle, 9000);">Until...</button>
+            </h1>
+            <h1 class="entertexttwo px-5" id="hometexttwo">...a good boi was born...</h1>
+
+        </div>
+
+        <script>
+            function playAudio() {
+                document.getElementById("myAudio").play();
+                //document.getElementById("title").style.display = "none";
+                //document.getElementById("author").style.display = "none";
+                //document.getElementById("story").style.display = "none";
+
+            }
+            function removePage() {
+                document.getElementById("hometext").style.display = "none";
+                document.getElementById("hometexttwo").style.display = "block";
+            }
+            function revealPage() {
+                document.getElementById("home").style.display = "none";
+                document.getElementById("hometexttwo").style.display = "none";
+            }
+
+            function revealTitle() {
+                document.getElementById("hideonstart").style.display = "block";
+            }
+            /*function revealAuthor() {
+                document.getElementById("author").style.display = "block";
+            }
+            function revealStory() {
+                document.getElementById("story").style.display = "block";
+            }*/
+        </script>
+
+        <nav>
+
+        </nav>
+        <div class="container text-center estrellas inverso pug">
+            <div class="container">
+                <h1>
+                    <span>P</span>
+                    <span>U</span>
+                    <span>G</span>
+                    <span>T</span>
+                    <span>I</span>
+                    <span>M</span>
+                    <span>E</span>
+                </h1></div>
+            <img id="runningpug" src="bartonimages/funny-cute-animated-pug-gif-32.gif" alt="Pug Circles"/>
+            <audio id="myAudio">
+                <source src="bartonsounds/01-26-09, Pug Running in Circles.mp3" type="audio/mpeg">
+                Your browser does not support the <code>audio</code> tag.
+            </audio>
+        </div>
+        <div class="container text-center" id="title">
+            <h1>Get Your Pug Filling for the Day</h1>
+        </div>
+        <div class="container text-center" id="story">
+
+        </div>
+        <div id="hideonstart" class="container-fluid text-center justify-content-center">
+            <h3>House Needing A Little More Pug?</h3>
+            <div class="row mx-5">
+                <div class="col-lg-3"><iframe class="border border-secondary" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=bartontechgro-20&marketplace=amazon&region=US&placement=B003VWUB6W&asins=B003VWUB6W&linkId=905790932ef466f233737e30d21ce216&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
+                    </iframe></div>
+                <div class="col-lg-3"><iframe class="border border-secondary" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=bartontechgro-20&marketplace=amazon&region=US&placement=B074MTLLQ3&asins=B074MTLLQ3&linkId=394c0f087184b97df681534ec3e298e4&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
+                    </iframe></div>
+                <div class="col-lg-3"><iframe class="border border-secondary" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=bartontechgro-20&marketplace=amazon&region=US&placement=B07YSTT2SJ&asins=B07YSTT2SJ&linkId=936f6a40d14e0d2b2682434f83afb092&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
+                    </iframe></div>
+                <div class="col-lg-3"><iframe class="border border-secondary" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=bartontechgro-20&marketplace=amazon&region=US&placement=B01AAUDXHG&asins=B01AAUDXHG&linkId=94246492125438945f6f4709318181d4&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
+                    </iframe></div>
+            </div>
+        </div>
+
+        <div>
+            <h2></h2>
+        </div>
+
+
+    </body>
 </html>
